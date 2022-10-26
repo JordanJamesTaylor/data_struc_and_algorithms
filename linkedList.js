@@ -90,7 +90,7 @@ class LinkedList { // Create class
         return temp
     }
 
-    get(index){ // Get value at given index
+    get(index){ // Retrieve node from given index
         if(index < 0 || index >= this.length) return undefined // If index is less than or greater than the length of the list
         
         const temp = this.head
