@@ -26,3 +26,4 @@ console.log("NUMBERS REMOVED: ", numbers);
 // Every parameter after the second is treated as an element to add to the array from the start index
 numbers.splice(2, 0, 3, 4);
 console.log("NUMBERS ADDED: ", numbers);
+
