@@ -16,6 +16,7 @@ class DoublyLinkedList{
 
     push(value){ // Add node to end of list // 0(1)
         const newNode = new Node(value)
+        
         if(!this.head){
             this.head = newNode
             this.tail = newNode
@@ -24,12 +25,14 @@ class DoublyLinkedList{
             newNode.prev = this.tail // Set backwards pointer
             this.tail = newNode
         }
+
         this.length--
         return this
     }
 
     pop(){ // Remove node from end of list // 0(1)
         if(this.length === 0) return undefined
+
         let temp = this.tail
         if(this.length === 1){
             this.head = null
@@ -39,12 +42,14 @@ class DoublyLinkedList{
             this.tail.next = null
             temp.prev = null
         }
+
         this.length--
         return temp
     }
 
     unshift(value){ // Add value to beginning of list // 0(1)
         const newNode = new Node(value)
+        
         if(!this.head){
             this.head = newNode
             this.tail = newNode
@@ -53,12 +58,14 @@ class DoublyLinkedList{
             this.head.prev = newNode
             this.head = newNode
         }
+
         this.length++
         return this
     }
 
     shift(){ // Remove node from beginning of list // 0(1)
         if(!this.head) return undefined
+
         let temp = this.head
         if(this.length === 1){
             this.head = null
@@ -68,6 +75,7 @@ class DoublyLinkedList{
             this.head.prev = null
             temp.next = null
         }
+
         this.length--
         return temp
     }
@@ -80,6 +88,7 @@ class DoublyLinkedList{
     */
     get(index){ // Retrieve node from given index // 0(n)
         if(index < 0 || index >= this.length) return undefined
+
         let temp = this.head
         if(index < this.length/2){ // If index is in the first half of the list
             for(let i = 0; i < index; i++){
@@ -106,6 +115,7 @@ class DoublyLinkedList{
         if(index === 0) return this.unshift(value)
         if(index === this.length) return this.push(value)
         if(index < 0 || index > this.length) return false
+
         const newNode = new Node(value)
         let before = this.get(index - 1)
         let next = this.get(index + 1)
@@ -113,6 +123,7 @@ class DoublyLinkedList{
         newNode.prev = before
         newNode.next = next
         next.prev = newNode
+
         this.length++
         return true
     }
@@ -121,11 +132,13 @@ class DoublyLinkedList{
         if(index === 0) return this.shift()
         if(index === this.length - 1) return this.pop()
         if(index < 0 || index > this.length) return false
+
         const temp = this.get(index)
         temp.prev.next = temp.next
         temp.next.prev = temp.prev
         temp.next = null
         temp.prev = null
+
         this.length--
         return temp
     }

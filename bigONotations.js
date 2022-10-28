@@ -5,7 +5,7 @@
     - 0(log n) = Divide and Conqur
     - 0(1) = Constant time
 
-    We want to be either 0(1), 0(log n), or 0(n)
+    We want to be either 0(1), 0(log n), or, at a push, 0(n)
 
 */
 
