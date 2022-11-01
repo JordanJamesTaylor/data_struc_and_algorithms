@@ -128,6 +128,9 @@ function itemInCommonBadSolution(arr1, arr2){ // 0(n²) due to nested for loop /
 }
 
 // DO USE THIS ONE
+array [1,2,3]
+arr2[4,5,1]
+
 function itemInCommonBetterSolution(arr1, arr2){ // 0(n) // Better solution, use this or something similar in an interview
     let obj = {} // Build an empty object
     for(let i = 0; i < arr1.lenght; i++){ 
