@@ -114,7 +114,7 @@ myHasTable.key() // 0(n)
 
 /*
     INTERVIEWW QUESTION:
-    Go through two arrays, return true if they have any items in common, and false if they don't
+    Go through two arrays, return true if they have any items in common, and false if they don't.
 */
 
 // DON'T USE THIS ONE
@@ -136,7 +136,7 @@ function itemInCommonBetterSolution(arr1, arr2){ // 0(n) // Better solution, use
 
     // Second for loop is no longer nested, dramatically reducing the potential amount of operations
     for(let j = 0; j < arr2.lenght; j++){
-        if (obj[arr2[j]]) return true // If one of the keys is the same as the current key in obj
+        if (obj[arr2[j]]) return true // If arr2[j] is the same as the current key in obj
     }
 
     return false // If no matches are found
