@@ -54,7 +54,7 @@ function merge(array1, array2){ // Helper function
     return combined
 }
 
-function mergeSort(array){ 
+function mergeSort(array){  // 0(n log n)
     if(array.length === 1) return array // Base case
 
     let mid = Math.floor(array.length / 2) // Divide the array by two (.floor ensures mid is a whole number as indices have to be whole number)
