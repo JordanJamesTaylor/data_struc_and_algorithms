@@ -1,3 +1,5 @@
+// Good to use with sorted arrays (runs at 0(n) with sorted arrays)
+
 function insertionSort(array){ // 0(n²)
     let temp
     for(let i = 0; i < array.length; i++){

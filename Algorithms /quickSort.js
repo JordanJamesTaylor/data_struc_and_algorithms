@@ -1,6 +1,9 @@
 /*
     Recursive sorting 
         
+    Good function to use when data is not already sorted O(n log n)
+    Bas to use if data is sorted 0(n²)
+    
     pivot
         From pivot point
         Loop through array from the next item over
