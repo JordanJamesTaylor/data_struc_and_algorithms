@@ -1,6 +1,13 @@
 /*
     Recursive sorting 
 
+    Space complexity = 0(n)    
+        The amount of single item arrays is determined by the length of the original array
+
+    Time complexity = 0(n log n)
+        Halving arrays is 0(log n)
+        Putting the arrays back together 0(n)
+
     merge
         Called by mergeSort
         Sorts two arrays items into one array smallest --> largest
@@ -23,22 +30,23 @@ function merge(array1, array2){ // Helper function
     let i = 0
     let j = 0
 
-    while(i < array1.length && j < array2.length){
-        if(array1[i] < array2[j]){
-            combined.push(array1[i])
-            i++
-        }else{
-            combined.push(array2[j])
-            j++
+    while(i < array1.length && j < array2.length){ // While i and j are less than the lengthes of either array 1 or array 2
+        if(array1[i] < array2[j]){ // Check if array2 has the larger value 
+            combined.push(array1[i]) // If it does, add it to combined
+            i++ // Increment i only
+        }else{ // Otherwise array1 has the larger vlaue
+            combined.push(array2[j]) // Add to combined
+            j++ // Increment j only
         }
     }
-
-    while(i < array1.length){
+    // If we have reached the end of one array but the other is still populated
+    // Push the remaining items of the remaining array into combines
+    while(i < array1.length){ // Array 1 
         combined.push(array1[i])
         i++
     }
 
-    while(j < array2.length){
+    while(j < array2.length){ // Array 2
         combined.push(array2[j])
         j++
     }
