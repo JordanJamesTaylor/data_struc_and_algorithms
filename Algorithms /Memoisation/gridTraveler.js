@@ -33,7 +33,7 @@ function gridTraveler(m, n, memo = {}){
     if(key in memo) return memo[key] // Memoisation // This operation has already been computed, return result instead of calling self again
     if(m === 0 && n === 0) return 0 // Invalid grid
     if(m === 1 && n === 1) return 1
-    memo[key] = gridTraveler(m - 1, n) + gridTraveler(m, n - 1) // Add result of recusive call to obj
+    memo[key] = gridTraveler(m - 1, n, memo) + gridTraveler(m, n - 1, memo) // Add result of recusive call to obj
     return memo[key] // Return newly added value
 }
 
