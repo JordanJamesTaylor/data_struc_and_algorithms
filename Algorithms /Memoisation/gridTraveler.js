@@ -27,10 +27,11 @@
 
 */
 function gridTraveler(m, n, memo = {}){
-    const key = m + ',' + n // JS stores keys as strings, so we can concat these values // Use comma to differentiate the m and n
+    const key = m + ',' + n // JS stores keys as strings, so we can concat these values // Use comma to differentiate m and n
+    
+    if(key in memo) return memo[key] // Memoisation // This operation has already been computed, return result instead of calling self again
     
     // Base cases
-    if(key in memo) return memo[key] // Memoisation // This operation has already been computed, return result instead of calling self again
     if(m === 0 && n === 0) return 0 // Invalid grid
     if(m === 1 && n === 1) return 1
     memo[key] = gridTraveler(m - 1, n, memo) + gridTraveler(m, n - 1, memo) // Add result of recusive call to obj
