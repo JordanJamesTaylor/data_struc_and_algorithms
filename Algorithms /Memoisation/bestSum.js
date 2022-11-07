@@ -25,7 +25,7 @@ function bestSum(targetSum, numbers, memo={}){
 
     let shortestCombination = null 
 
-    for(let num of numbers){ // We use of because want the elements not their indicies 
+    for(let num of numbers){ // We use of because we want the elements not their indicies 
         const remainder = targetSum - num
         const remainderCombination = bestSum(remainder, numbers, memo)
         if(remainderCombination !== null){
