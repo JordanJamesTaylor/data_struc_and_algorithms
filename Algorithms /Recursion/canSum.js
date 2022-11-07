@@ -29,7 +29,7 @@ function canSum(target, numbers, memo={}){
         const remainder = target - num
         /*
             Question allows us to use the same number multiple times, so we pass in the same array
-            If the recursive call returns true - the function doesn't end with a negative number and there is at least one way to use the numbers in the array to make the target number - then return true
+            If the recursive call returns true - the function doesn't end with a negative number and there is at least one way to subtract the numbers in the array to make the target number - then return true
         */
         if(canSum(remainder, numbers, memo) === true){
             memo[target] = true // Store key and result in memo
