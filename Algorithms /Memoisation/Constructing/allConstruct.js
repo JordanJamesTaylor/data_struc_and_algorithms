@@ -17,8 +17,7 @@
     If target is initially an empty string
         Return 2D array 
     If we hit base case ''
-        Push current edge label(current target) used to transition to this child into it's subarray in the return to start building the 2D array
-        
+        Push current edge label (current target) used to transition to this child into the subarray in the return to start building the 2D array
     If we cannot make the target string 
         Return an empty array 
 */

@@ -1,0 +1,36 @@
+Big O notation represents the computational difficulty of a task as the data sset increases
+
+Constants are ignored when determining big O as the effects on performance is negligible
+    n + n + 1 + n^3 ---> n^3
+
+O(1) --> Constant 
+    One operation
+
+O(log n) --> Logarithmic
+    Execution is proportional to the loarithm of the input size
+    Instead of i++ (linear), it's something like i+=2 (logarithmic)
+
+O(n) --> Linear
+    Iterative
+    Time complexity has a 1:1 relationship with the size of the data
+    All loops
+
+O(n²) --> Quadratic
+    Increase the size of the input by a multiplication factor
+    Nested loops
+
+O(n!) --> Factorial 
+    If you're here then you've done something wrong
+
+
+Space complexity --> what am I returning
+// Constant Space
+    const number = 1
+    const boolean = true
+    const undef = undefined
+    const nulls = nulls
+
+// Linear Space --> variable size
+    const text = "Hello world!"
+    const array = []
+    const object = {}
