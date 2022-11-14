@@ -40,7 +40,7 @@ const graph2 = {
         1a. Call helper function for current node --> helper function handles traversal
     4. Use helper function to begin traversals (either depth or dreadth first) at each unvisited node
         4a. Check if current node has already been visited, skip it if it has
-        4b. Add current node to set to mark as visited avoiding inifinite loops/counting the same node more than once
+        4b. Add current node to Set to mark as visited avoiding inifinite loops/counting the same node more than once
         4c. Continue traversal until all connected nodes have been visited
         4d. Upon completing each traversal, increment count by 1
     5. Repeat steps 3 and 4 
