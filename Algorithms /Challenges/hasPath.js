@@ -3,17 +3,23 @@
 
     The function should return a boolean indicating whether or not there exists a directed path between the source and destination nodes.
 
+    Example of edge structure:
+        edges: [
+            [i, j], --> connection between i to j
+            [k, i], --> k to i
+            [m, k], ---> etc. 
+            [k, l],
+            [o, n]
+        ]
+
     n = number of nodes
     e = number of edges
 
-    Time: O(e)
-    Space: 0(n)
-
 */
 
-// DEPTH FIRST
-// n = number of nodes
-// e = number of edges
+// DEPTH FIRST --> STACK
+// Time: O(e)
+// Space: 0(n)
 function hasPathDF(graph, src, dst){
     if(src === dst) return true // BC --> Found path
 
@@ -27,7 +33,7 @@ function hasPathDF(graph, src, dst){
     return false // After the loop (after searching all paths), then return false if no paths are found
 }
 
-// BREADTH FIRST
+// BREADTH FIRST --> QUEUE
 // Time: O(e)
 // Space: O(n)
 function hasPathBF(graph, src, dst){
