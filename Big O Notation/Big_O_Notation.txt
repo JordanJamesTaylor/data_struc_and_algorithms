@@ -30,7 +30,7 @@ Space complexity --> what am I returning
     const undef = undefined
     const nulls = nulls
 
-// Linear Space --> variable size
+// Linear Space --> varies in size
     const text = "Hello world!"
     const array = []
     const object = {}
