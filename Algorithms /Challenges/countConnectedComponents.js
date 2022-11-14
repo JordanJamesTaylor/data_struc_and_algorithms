@@ -78,10 +78,10 @@ function explore(graph, currentNode, visited){
     */
     if(visited.has(String(currentNode))) return false // Already visited this node
 
-    visited.add(String(currentNode)); // Keep track of visited nodes // Only store the string version
+    visited.add(String(currentNode)); // Track visited nodes // Only store string version // .add() only adds unique values
 
     for(let neigbour of graph[currentNode]){
-        explore(graph, neigbour) // Explore all neigbours
+        explore(graph, neigbour, visited) // Explore all neigbours
     } // We only want to check how many components there are. Move to return once we've visited all connecting nodes 
 
     return true // Finished exploring all neigbours
