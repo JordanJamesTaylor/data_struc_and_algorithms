@@ -51,8 +51,8 @@ function exploreSize(graph, currentNode, visited){ // Depth first search
     visited.add(String(currentNode)); // Add current node to visited
     let size = 1; // Starts out as 1 as we won't get here if there no nodes to traverse through
 
-    for(let neigbour of graph[currentNode]){ // From current node, traverse through all it's neigbours 
-        size += exploreSize(graph, neigbour, visited); 
+    for(let neighbour of graph[currentNode]){ // From current node, traverse through all it's neighbours 
+        size += exploreSize(graph, neighbour, visited); 
     }
     
     return size;

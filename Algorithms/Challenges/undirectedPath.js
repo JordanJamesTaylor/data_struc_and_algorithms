@@ -29,8 +29,8 @@
     1. Use buildGraph helper function to convert edge list to adjacency list
         Graph === Object
         Each key in object represents a node
-        Each keys value is an array of that nodes neigbours
-            This graph is undirected --> each neigbours neigbour points to itself
+        Each keys value is an array of that nodes neighbours
+            This graph is undirected --> each neighbours neighbour points to itself
         Keep track of visited nodes using Set()
             Set() --> collection of items. Adding to a Set, or looking for a value in a Set, is constant time O(1)  
         Check for visited nodes
@@ -69,8 +69,8 @@ function hasPath(graph, src, dst, visited){
 
     visited.add(src) // Add node to the Set of visited nodes to guard against infinite loops
 
-    for(let neigbour of graph[src]){ // src = current position in graph // neigbour = other nodes in array (e.g. 'j' from i: ['j', 'k'])
-        if(hasPath(graph, neigbour, dst, visited) === true){ // Travel from current neigbour to its neigbour // If we haven't already visited this node
+    for(let neighbour of graph[src]){ // src = current position in graph // neighbour = other nodes in array (e.g. 'j' from i: ['j', 'k'])
+        if(hasPath(graph, neighbour, dst, visited) === true){ // Travel from current neighbour to its neighbour // If we haven't already visited this node
             return true // if hasPath doesn't return false during recursive calls, then there must be a path from source to the destination
         }  
     }
@@ -88,7 +88,7 @@ function buildGraph(edges){
             graph[a] = [] // Set node to be a key of graph and assign it an empty array
         }
         if(!(b in graph)) graph[b] = [];
-        graph[a].push(b) // Add neigbours to their edges
+        graph[a].push(b) // Add neighbours to their edges
         graph[b].push(a) // Undirected graphs are symmetric (nodes pointing to each other if there's a connection, not one way)
     }
 

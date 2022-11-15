@@ -1,7 +1,7 @@
 // Adding to the front of arrays = 0(n)
 // Adding to the end of arrays = 0(1)
 // Arrays are good if you want to find values by an index, as this has a big 0 of 0(1) (one opertation)
-// Arrays are bad if you want to add to the beginning of a data structure, as it'll have to increment all the other elements indecies by 1, giving it a big 0 of 0(n) 
+// Arrays are bad if you want to add to the beginning of a data structure, as it'll have to increment all the other elements indices  by 1, giving it a big 0 of 0(n) 
 
 const myArray = [11, 3, 23, 7];
 
@@ -17,7 +17,7 @@ myArray.pop(17); // 0(1)
 /*
     .shift and .unshift have a big 0 of 0(n)
     They add/remove elements to the beginning of the array and setting those elements to index 0
-    This means that every other element in the array needs to have their indecies incremented by 1
+    This means that every other element in the array needs to have their indices  incremented by 1
     n is the length of the array, the number of operations that need to be performed is dictated by the arrays length 
 */
 myArray.shift() // 0(n)

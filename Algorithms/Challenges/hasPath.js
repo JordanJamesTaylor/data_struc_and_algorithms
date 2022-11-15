@@ -24,9 +24,9 @@ function hasPathDF(graph, src, dst){
     if(src === dst) return true // BC --> Found path
 
     for(let neighbour of graph[src]){ // Loop through all a given nodes neighbours
-        // graph[src] = all neigbouring nodes
+        // graph[src] = all neighbouring nodes
         if(hasPathDF(graph, neighbour, dst) === true){ // If there is a neighnour, traverse to it. Continue until hitting a BC
-            return true // If there is a path from neigbours to the dstination
+            return true // If there is a path from neighbours to the dstination
         }
     }
 
@@ -42,8 +42,8 @@ function hasPathBF(graph, src, dst){
     while (queue.length > 0){
         const currentNode = queue.shift() // Remove and store the first node from the queue
         if(currentNode === dst) return true 
-        for(let neigbour of graph[currentNode]){ // graph[src] = all neighbouring nodes
-            queue.push(neigbour) // Add neighbour to the end of the queue
+        for(let neighbour of graph[currentNode]){ // graph[src] = all neighbouring nodes
+            queue.push(neighbour) // Add neighbour to the end of the queue
         } 
     }
     /*

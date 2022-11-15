@@ -70,21 +70,21 @@ function countConnectedComponents(graph){
 function explore(graph, currentNode, visited){
     /*
         Keys of JS objects are converted to strings
-        Each key has an array of numbers representing that nodes neigbours
+        Each key has an array of numbers representing that nodes neighbours
         Set can store both strings a numbers
         Sets can become confused when they have both data types
-            A set will store both a number and string version of the neigbour
+            A set will store both a number and string version of the neighbour
             We should only store one version
     */
     if(visited.has(String(currentNode))) return false // Already visited this node
 
     visited.add(String(currentNode)); // Track visited nodes // Only store string version // .add() only adds unique values
 
-    for(let neigbour of graph[currentNode]){
-        explore(graph, neigbour, visited) // Explore all neigbours
+    for(let neighbour of graph[currentNode]){
+        explore(graph, neighbour, visited) // Explore all neighbours
     } // We only want to check how many components there are. Move to return once we've visited all connecting nodes 
 
-    return true // Finished exploring all neigbours
+    return true // Finished exploring all neighbours
 }
 
 console.log("GRAPH ONE: ", countConnectedComponents(graph1)); // 3

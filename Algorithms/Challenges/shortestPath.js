@@ -17,14 +17,14 @@
         2c. If graph does not contain these edges, make a key value pair for each edge   
         2d. Key = current node
         2e. Value = empty array
-        2f. Push each edge into the other edge's array of neigbours 
+        2f. Push each edge into the other edge's array of neighbours 
     3. Use breadth first search logic to traverse through graph
         3a. Define a queue and as an array with an array of nodeA and 0 ( [ [nodeA, 0] ] )
     4. Use while loop to iterate over queue while it isn't empty
         4a. Remove current node from front of queue by unpacking it into node and distance variables
         4b. Add current node to the visited Set
         4c. Check if current node === nodeB. If they're the same, then we've found a path from nodeA to nodeB
-        4d. If they're not the same then continue searching, add this node's neigbours to end of queue, increment distance by 1
+        4d. If they're not the same then continue searching, add this node's neighbours to end of queue, increment distance by 1
         4e. Prevent cycles by maintaining the visited Set
     5. Return number representing the least amount of paths from nodeA to nodeB OR -1 if there are no paths
 */
@@ -47,10 +47,10 @@ function shortestPath(edges, nodeA, nodeB){
         if(node === nodeB) return distance; // Found a path from nodeA to nodeB
 
         // If we're yet to find a path from nodeA to nodeB
-        for(let neigbour of graph[node]){ // Go into neighbours of the current node
-            if(!visited.has(neigbour)){ // If current node's neighbour has not been visited
-                visited.add(neigbour) // Mark current node as visited
-                queue.push([ neigbour, distance+1 ])// Add curren nodes neighbour to queue and increment distance
+        for(let neighbour of graph[node]){ // Go into neighbours of the current node
+            if(!visited.has(neighbour)){ // If current node's neighbour has not been visited
+                visited.add(neighbour) // Mark current node as visited
+                queue.push([ neighbour, distance+1 ])// Add curren nodes neighbour to queue and increment distance
             }
         }
     }
