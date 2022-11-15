@@ -10,7 +10,7 @@
     Time: O(r*c) --> one giant island
     Space: O(r*c) --> adding the each node of the giant island as visited to the Set
 
-    1. Convert grid to adjacency list (JS object) with helper function
+    1. Send grid to helper function
         1a. Visualise each position in the grid as a node
         1b. Give each node an index for the row and column to denote its position in the grid
 
