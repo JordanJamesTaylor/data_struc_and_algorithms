@@ -25,7 +25,6 @@
     5. Once island has been fully explored, increment counter by 1
 
     *** ISSUE WITH SET() ***
-
     const s = new Set() --> define new set
     s.add([1, 3]) --> add an array with the current nodes row and column indices 
 
@@ -35,6 +34,7 @@
     To get around this we need to convert the indices to a string ( [1, 3] becomes '1,3' ) --> strings are primitive
 
 */
+
 const grid1 = [
     ['W', 'L', 'W', 'W', 'W'],
     ['W', 'L', 'W', 'W', 'W'],
@@ -65,7 +65,7 @@ function islandCount(grid){
 
     for(let row = 0; row < grid.length; row += 1){ // Explore the grid by row
         for(let col = 0; col < grid[0].length; col += 1){ // Explore the grid by column
-            if(explore(grid, row, col, visited) === true){ // Foundn island node and fully explored it
+            if(explore(grid, row, col, visited) === true){ // Find island nodes and fully explore them
                 count += 1;
             } 
         }
@@ -84,15 +84,8 @@ function explore(grid, row, col, visited){
             3a. Convert position array to string
             3b. Format string with comma to seperate row and column
             3c. Add position string to visited Set
-        4.
 
-        *** RESOLVING THE SET() ISSUE ***
-        Convert array (reference type) to a string (primitive type)
-        Store the string in visited Set
-        
-        Now that the row and column are store as a primitive type, we can easily compare the actual values of row and column to see if they already exist within the visited Set. Keeping the position as a reference type will cause the Set to check if both values point to the same place in memory, which they won't as it'll treat the array we're checking for as an entirely different array pointing to a difference place in memory.
-
-        We also need to format the string with a comma between row and column to avoid collisions that are meant to represent two different positions.
+        We need to format the string with a comma between row and column to avoid collisions that are meant to represent two different positions.
         
         If we omit the comma...
         row = 12
@@ -106,8 +99,14 @@ function explore(grid, row, col, visited){
         Use the comma to distinguish between row and column...
         positionOne = '12,4'
         positionTwo = '1,24'
+
+        *** RESOLVING THE SET() ISSUE ***
+        Convert array (reference type) to a string (primitive type)
+        Store the string in visited Set
+        
+        Now that the row and column are store as a primitive type, we can easily compare the actual values of row and column to see if they already exist within the visited Set. Keeping the position as a reference type will cause the Set to check if both values point to the same place in memory, which they won't as it'll treat the array we're checking for as an entirely different array pointing to a difference place in memory.
     */
-   
+
     // BASE CASE: Keep within the bounds of the gird
     const rowInBounds = 0 <= row && row < grid.length; // Inclusive with index 0(top row), exlusive with the length (bounds of the grid)
     const colInBounds = 0 <= col && col < grid[0].length // Length of a column, not a row
