@@ -5,7 +5,6 @@
 
     You are given an API bool isBadVersion(version) which returns whether version is bad. Implement a function to find the first bad version. You should minimize the number of calls to the API.
 
-
     *** Solution ***
 
     Aim for O(log n) with a binary search
@@ -39,7 +38,7 @@ function findFirstBadVersion(n){
     let left = 0;
     let right = n;
     let middle;
-
+    
     while(left < right){
         middle = Math.floor(left + (right - left) / 2); 
         if(!isBadVersion(middle)){

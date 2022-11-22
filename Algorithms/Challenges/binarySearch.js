@@ -5,7 +5,6 @@
 
     n = length of nums array
 */
-
 const nums1 = [-1,0,3,5,9,12];
 const nums2 = [-1,0,3,5,9,12];
 
@@ -20,7 +19,7 @@ function binarySearch(nums, target){
 
         if(target === nums[middle]) return middle; // Check if it's === target for an early return
 
-        // 
+        // Move through list
         if(target < nums[middle]){
             right = middle - 1;
         }else{
