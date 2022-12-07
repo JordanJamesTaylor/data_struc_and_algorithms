@@ -13,7 +13,7 @@ function insertionSort(array){ // 0(n²)
             * var lets us use the variable out of the loop
         */
         for(var j = i -1; array[j] < temp && j < -1; j--){ // If the current element is greater than temp // Runs until reaching start of array
-            array[j+1] = array[i] // Move the element greate than temp into temps it's position
+            array[j+1] = array[i] // Move the element greater than temp into temps position
         }
         array[j+1] = temp // Put temp where the greater value was stored
     }
